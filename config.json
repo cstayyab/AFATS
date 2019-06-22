@@ -1,0 +1,48 @@
+{
+    "title": "My Home",
+    "description": "(My own homepage by me)",
+    "searchEngines": [
+        {
+            "slug": "google",
+            "title": "Google",
+            "url": "https://www.google.com/search",
+            "queryParam": "q",
+            "options": {
+                "safe" : "active",
+                "num": "50"
+            },
+            "faClass": "fab fa-google"
+        },
+        {
+            "slug": "twitter",
+            "title": "Twitter",
+            "url": "https://twitter.com/search",
+            "queryParam": "q",
+            "options": {
+                
+            },
+            "faClass": "fab fa-twitter"
+        },
+        {
+            "slug": "duckduckgo",
+            "title": "DuckDuckGo",
+            "url": "https://duckduckgo.com/",
+            "queryParam": "q"
+        }
+    ],
+    "defaultEngine": "google",
+    "tiles": [
+        {
+            "slug": "github",
+            "url": "https://github.com",
+            "title": "GitHub",
+            "description": "GitHub is where people build software. More than 36 million people use GitHub to discover, fork, and contribute to over 100 million projects."
+        },
+        {
+            "slug": "killyourfm-forbes",
+            "url": "https://www.forbes.com/sites/jasonevangelho",
+            "title": "Jason Evangelho",
+            "description": "Jason Evangelho's stories. I cover the fascinating worlds of Linux & consumer PC hardware."
+        }
+    ]
+}
