@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About - AFATS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="afats.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css" />
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script>
+        $(
+            function () {
+                var converter = new showdown.Converter();
+                $.get(
+                    'README.md',
+                    function (text) {
+                        $('#page-content').html(converter.makeHtml(text));
+                    }, 'text');
+
+            }
+        );
+    </script>
+</head>
+
+<body class="d-flex flex-column">
+    <div id="page-content" class=" markdown-body">
+    </div>
+
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white">
+        <div class="container text-center text-muted">
+            <small>Copyright &copy; <a class="font-weight-bold text-muted" href="https://github.com/cstayyab/AFATS"
+                    target="_blank">Away From All The Shit</a> by <a class="text-muted"
+                    href="https://github.com/cstayyab" target="_blank">cstayyab</a> | <a class="text-muted" href="about.html" target="_blank">About</a></small>
+        </div>
+    </footer>
+</body>
+
+</html>
