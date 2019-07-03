@@ -2,11 +2,11 @@
 
 by *[cstayyab](https://github.com/cstayyab)*
 
-Away From All The Shit (AFATS) [basically designed for myself] is a browser home page / new tab document for people who want a clean, efficient and productive homepage that is totally in their control and cann be used on all the devices with cross-browser compatibility.
+Away From All The Shit (AFATS) [basically designed for myself] is a browser home page / new tab document for people who want a clean, efficient and productive homepage that is totally in their control and can be used on all the devices with cross-browser compatibility.
 
 ## Working
 
-It basically works by the predefined `config.json` file present in the root directory. The `config.json` provides the default attributes for the homepage. The default settings can be ovveridden using the 'Settings' and 'Add Quick Link' Interface provided in the footer. It is implemented using HTML5 LocalStorage. 
+It basically works by the predefined `config.json` file present in the root directory. The `config.json` provides the default attributes for the homepage. The default settings can be overidden using the 'Settings' and 'Add Quick Link' interface provided in the footer. It is implemented using HTML5 LocalStorage. 
 
 ### config.json Options
 
