@@ -6,7 +6,7 @@ Away From All The Shit (AFATS) [basically designed for myself] is a browser home
 
 ## Working
 
-It basically works by the predefined `config.json` file present in the root directory. The `config.json` provides the default attributes for the homepage. These are basically static for now and can only be changed by directly editing `config.json`.  
+It basically works by the predefined `config.json` file present in the root directory. The `config.json` provides the default attributes for the homepage. The default settings can be ovveridden using the 'Settings' and 'Add Quick Link' Interface provided in the footer. It is implemented using HTML5 LocalStorage. 
 
 ### config.json Options
 
