@@ -42,8 +42,26 @@ These are the options that can be changed according to your willingness.
 
 &nbsp;&nbsp;&nbsp;&nbsp;`description`: Short description of the link
 
+## Changelog
+
+### July 3, 2019
+
+* Added Support for Reading From HTML LocalStorage
+
+* Added support for overriding Title, Description and Default Search Engine in LocalStorage
+
+* Added support for deleting Quick Links
+
+* Added support for adding new Quick Links
+
 ## Future Improvements
 
-* Implementation of `LocalStorage` to replace the default configuration set by `config.json` and make it dynamic.
+* <del>Implementation of `LocalStorage` to replace the default configuration set by `config.json` and make it dynamic.</del>
 
-* Provide an interface on frontend to easily change the parameters in `LocalStorage`
+* <del>Provide an interface on frontend to easily change the parameters in `LocalStorage`</del>
+
+* <del>Add Support for Adding new Quick Links</del>
+
+* Make website available offline using Service Workers
+
+* Add more search engines
