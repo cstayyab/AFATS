@@ -92,7 +92,7 @@ function setUpPage(title, description, search, tiles) {
             return;
         }
         if (this.checkValidity()) {
-            $.getJSON("http://api.linkpreview.net/?key=5d1c8813b02c068d1764561c1b041f7c37b41abb5f8dd&q=" + $(this).val()).done(function (data) {
+            $.getJSON("https://api.linkpreview.net/?key=5d1c8813b02c068d1764561c1b041f7c37b41abb5f8dd&q=" + $(this).val()).done(function (data) {
                 $('#chgURLTitle').val(data.title);
                 $('#chgURLDescription').val(data.description);
             }).fail(function () {
