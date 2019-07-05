@@ -1,0 +1,1 @@
+## AFATS - Away From All The Shit
