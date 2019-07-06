@@ -1,0 +1,19 @@
+<div class="container">
+    <h3>Quick Links</h3>
+    <div class="row my-3">
+        <!-- Card row -->
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 pointer" *ngFor="let item of quickLinksList">
+            <!-- Card item -->
+            <div class="card card-hoverable bg-primary text-light">
+                <div class="card-body">
+                    <!-- Card title -->
+                    <a class="card-title h5 text-light" href="https://cstayyab.github.io">{{item.title}}</a>
+                        <!-- Divider -->
+                        <div class="divider col-md-12 my-2 bg-light"></div>
+                        <!-- Card content -->
+                        <p class="card-text h6 py-1">{{item.descr}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
