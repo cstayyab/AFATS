@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import QuickLinkModel from 'src/app/models/quick-link';
+import { QuickLinksService } from 'src/app/services/quick-links.service';
 
 @Component({
   selector: 'app-quick-links',
@@ -11,27 +12,22 @@ export class QuickLinksComponent implements OnInit {
   // Stores fetched quick links here
   quickLinksList = new Array<QuickLinkModel>();
 
-  constructor() { }
+  constructor(
+    private qlService: QuickLinksService
+  ) { }
 
   ngOnInit() {
     // Fetch quick links
-    this.fetchQuickLinks()
-  }
-
-  // TODO: Move this method to Service class
-  fetchQuickLinks() {
-    // Mock Quick links!
-    const titles = ["My Github Profile", "Project Link"]
-    const descrs = ["Get to know all about CS Tayyab", "http://github.com/cstayyab/AFATS"]
-    
-    // Before adding new items, clear the set!
-    this.quickLinksList.splice(0, this.quickLinksList.length)
-    // Iterate over the mock arrays
-    let i
-    for(i=0;i<titles.length;i++) {
-      const model = new QuickLinkModel(titles[i], descrs[i])
-      this.quickLinksList.push(model)
-    }
+    this.qlService.fetchQuickLinks()
+    .subscribe({
+      next: data => {
+        // Clear data set
+        this.quickLinksList.splice(0, this.quickLinksList.length)
+        // Add new data
+        data.forEach(el => this.quickLinksList.push(el))
+      },
+      error: err => console.error(err)
+    })
   }
 
 }

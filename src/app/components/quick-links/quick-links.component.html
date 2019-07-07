@@ -8,12 +8,16 @@
                 <div class="card-body">
                     <!-- Card title -->
                     <a class="card-title h5 text-light" href="https://cstayyab.github.io">{{item.title}}</a>
-                        <!-- Divider -->
-                        <div class="divider col-md-12 my-2 bg-light"></div>
-                        <!-- Card content -->
-                        <p class="card-text h6 py-1">{{item.descr}}</p>
+                    <!-- Divider -->
+                    <div class="divider col-md-12 my-2 bg-light"></div>
+                    <!-- Card content -->
+                    <p class="card-text h6 my-1">{{item.descr}}</p>
                 </div>
             </div>
+        </div>
+        <!-- No items found -->
+        <div class="ml-4" *ngIf="quickLinksList.length === 0">
+            <p>No records found</p>
         </div>
     </div>
 </div>
