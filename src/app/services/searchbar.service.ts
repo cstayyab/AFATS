@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import SearchConfig from '../models/search/search-config';
+import { SearchOptions } from '../models/search/search-options';
+import SearchProvider from '../models/search/search-provider';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +13,11 @@ export class SearchbarService {
   /**
    * This method fetches user config for Search bar from localStorage or uses our defaults. 
    */
-  fetchSearchConfig(): SearchConfig {
-    let config: SearchConfig = JSON.parse(localStorage.getItem('searchConfig'))    
+  fetchSearchProvider(): SearchProvider {
+    let config: SearchProvider = JSON.parse(localStorage.getItem('SearchProvider'))    
     if(config === null) {
-      // Load SearchConfig with default settings
-      config = new SearchConfig()
+      // Load SearchProvider with default settings
+      config = SearchOptions.OPT_GOOGLE
     }
     return config;
   }
@@ -23,6 +25,19 @@ export class SearchbarService {
   /**
    * Stores user's preferred Search provider preference to localStorage
    */
-  saveSearchConfig = (config: SearchConfig) => localStorage.setItem('searchConfig', JSON.stringify(config));
+  saveSearchProvider = (config: SearchProvider) => localStorage.setItem('SearchProvider', JSON.stringify(config));
 
+  getAllSearchProviders() {
+    //TODO: Better code!
+    let array = new Array<SearchOptions>()
+    array.push(SearchOptions.OPT_GOOGLE)
+    array.push(SearchOptions.OPT_TWITTER)
+    array.push(SearchOptions.OPT_DDG)
+    return array;
+  }
+
+  /**
+   * Rx Subject to inform Header component to refresh search config
+   */
+  searchChanged$ = new BehaviorSubject(new SearchProvider());
 }

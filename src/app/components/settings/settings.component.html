@@ -16,21 +16,22 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Title</span>
         </div>
-        <input autofocus #titleInput type="text" class="form-control" name="titleInput" placeholder="Homepage Title" />
+        <input autofocus #titleInput type="text" class="form-control" placeholder="Homepage Title" />
     </div>
     <!-- Input 'Description' -->
     <div class="input-group input-group-sm py-1">
         <div class="input-group-prepend">
             <span class="input-group-text">Description</span>
         </div>
-        <input #descrInput type="text" class="form-control" name="descrInput" placeholder="Description" />
+        <input #descrInput type="text" class="form-control" placeholder="Description" />
     </div>
     <!-- Change Search Engine -->
     <div class="input-group input-group-sm py-1">
         <div class="input-group-prepend">
             <span class="input-group-text">Search Engine</span>
         </div>
-        <select type="text" class="form-control" name="chgDEngine" id="chgDEngine">
+        <select type="text" class="form-control" (change)="updateSearchProvider($event.target.value)">
+            <option *ngFor="let item of searchProvidersList" [value]="item.key">{{item.displayName}}</option>
         </select>
     </div>
     <!-- Modal footer -->

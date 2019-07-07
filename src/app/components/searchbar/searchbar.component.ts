@@ -25,6 +25,7 @@ export class SearchbarComponent implements OnInit {
 
   updateSearchHref(query: string) {
     this.searchHref = `${this.searchURL}?${this.queryParam}=${query}`
+    console.log(this.searchHref)
   }
 
 }

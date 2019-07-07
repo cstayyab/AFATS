@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import QuickLinkModel from 'src/app/models/quick-link';
 import { QuickLinksService } from 'src/app/services/quick-links.service';
-import { SearchbarService } from 'src/app/services/searchbar.service';
-import SearchConfig from 'src/app/models/search/search-config';
 
 @Component({
   selector: 'app-quick-links',
