@@ -12,13 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { QuickLinksComponent } from './components/quick-links/quick-links.component';
+import { QuickLinkRowComponent } from './components/quick-link-row/quick-link-row.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { QlActionsComponent } from './components/ql-actions/ql-actions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    QuickLinksComponent
+    QuickLinksComponent,
+    QuickLinkRowComponent,
+    SearchbarComponent,
+    QlActionsComponent
   ],
   imports: [
     BrowserModule,
