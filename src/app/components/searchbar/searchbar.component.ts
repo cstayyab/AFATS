@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar',
@@ -9,7 +9,22 @@ export class SearchbarComponent implements OnInit {
 
   constructor() { }
 
+  @Input('faClass')
+  faClass: string
+
+  @Input('searchURL')
+  searchURL: string
+
+  @Input('queryParam')
+  queryParam: string
+
+  searchHref=''
+
   ngOnInit() {
+  }
+
+  updateSearchHref(query: string) {
+    this.searchHref = `${this.searchURL}?${this.queryParam}=${query}`
   }
 
 }

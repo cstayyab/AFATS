@@ -18,7 +18,7 @@ export class QuickLinksService {
     // Create a array to store the values
     const finalArray = new Array<QuickLinkModel>()
     // Iterate over the mock arrays
-    let i
+    let i: number
     for(i=0;i<titles.length;i++) {
       const model = new QuickLinkModel(titles[i], descrs[i], urls[i])
       finalArray.push(model)
