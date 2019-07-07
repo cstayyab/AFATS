@@ -14,6 +14,9 @@ export class QuickLinkRowComponent implements OnInit {
 
   @Input('descr')
   descr: string = ''
+  
+  @Input('url')
+  url: string = ''
 
   ngOnInit() {
   }

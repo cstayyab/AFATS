@@ -1,0 +1,51 @@
+<!-- Add Quick Link Modal -->
+<div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <h4 class="modal-title"><i class="fas fa-link"></i> Add Quick Link</h4>
+        <!-- Close button -->
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <!-- Input URL -->
+        <div class="input-group input-group-sm py-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="qlurl">Quick Link</span>
+            </div>
+            <input #urlInput type="url" class="form-control" required placeholder="Ex: http://google.com/" />
+        </div>
+        <!-- New title -->
+        <div class="input-group input-group-sm py-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="url-title">Title</span>
+            </div>
+
+            <input #titleInput type="text" class="form-control" required placeholder="Title" />
+        </div>
+        <!-- Add description -->
+        <div class="input-group input-group-sm py-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="url-description">Description</span>
+            </div>
+
+            <input #descrInput type="text" class="form-control" required placeholder="Description" />
+        </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-secondary">Add Search Engine</button>
+                <button type="button" class="btn btn-secondary">Add Quick Link</button> -->
+        <!-- Progress message -->
+        <span #newItemProgress hidden>Processing...</span>
+        <!-- New button -->
+        <button type="button" class="btn btn-success"(click)="processRequest()">Add</button>
+    </div>
+
+</div>

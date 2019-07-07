@@ -18,6 +18,7 @@ import { QuickLinkRowComponent } from './components/quick-link-row/quick-link-ro
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { QlActionsComponent } from './components/ql-actions/ql-actions.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { AddQuickLinkComponent } from './components/add-quick-link/add-quick-link.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     QuickLinkRowComponent,
     SearchbarComponent,
     QlActionsComponent,
-    SettingsComponent
+    SettingsComponent,
+    AddQuickLinkComponent
   ],
   imports: [
     BrowserModule,

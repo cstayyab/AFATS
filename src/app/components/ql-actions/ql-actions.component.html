@@ -1,6 +1,6 @@
 <div class="text-right">
     <!-- New Quick Tile -->
-    <a class="text-muted px-2" href="#">
+    <a class="text-muted px-2" href="#"  (click)="openModal(addQuickLink)">
         <fa-icon [icon]="['fas', 'plus-circle']" size="2x"></fa-icon>
     </a>
     <!-- Settings -->
@@ -12,4 +12,9 @@
 <!-- Settings Modal -->
 <ng-template #settingsModal>
     <app-settings [modalRef]="modalRef"></app-settings>
+</ng-template>
+
+<!-- Add Quick Link Modal -->
+<ng-template #addQuickLink>
+    <app-add-quick-link [modalRef]="modalRef"></app-add-quick-link>
 </ng-template>

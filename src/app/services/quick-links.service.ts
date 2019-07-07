@@ -11,15 +11,16 @@ export class QuickLinksService {
 
   fetchQuickLinks() : Observable<QuickLinkModel[]> {
     // Mock Quick links!
-    const titles = ["My Github Profile", "Project Link"]
-    const descrs = ["Get to know all about CS Tayyab", "http://github.com/cstayyab/AFATS"]
+    const urls = ["https://github.com/cstayyab", "https://github.com/cstayyab/AFATS"]
+    const titles = ["My Github Profile", "AFATS project"]
+    const descrs = ["Get to know all about CS Tayyab", "Check out the project's source code"]
     
     // Create a array to store the values
     const finalArray = new Array<QuickLinkModel>()
     // Iterate over the mock arrays
     let i
     for(i=0;i<titles.length;i++) {
-      const model = new QuickLinkModel(titles[i], descrs[i])
+      const model = new QuickLinkModel(titles[i], descrs[i], urls[i])
       finalArray.push(model)
     }
     // Return value
