@@ -1,0 +1,47 @@
+<!-- Modal Header -->
+<div class="modal-header">
+    <!-- Modal title -->
+    <h4 class="modal-title pull-left">
+        <fa-icon [icon]="['fa', 'cog']" size="1x"></fa-icon> Settings
+    </h4>
+    <!-- Close button -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- Modal Body -->
+<div class="modal-body">
+    <!-- Input 'Title' -->
+    <div class="input-group input-group-sm py-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Title</span>
+        </div>
+        <input autofocus #titleInput type="text" class="form-control" name="titleInput" placeholder="Homepage Title" />
+    </div>
+    <!-- Input 'Description' -->
+    <div class="input-group input-group-sm py-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Description</span>
+        </div>
+        <input #descrInput type="text" class="form-control" name="descrInput" placeholder="Description" />
+    </div>
+    <!-- Change Search Engine -->
+    <div class="input-group input-group-sm py-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Search Engine</span>
+        </div>
+        <select type="text" class="form-control" name="chgDEngine" id="chgDEngine">
+        </select>
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer my-2">
+        <!--
+            <button type="button" class="btn btn-secondary">Add Search Engine</button>
+            <button type="button" class="btn btn-secondary">Add Quick Link</button>
+         -->
+         <!-- Progress message -->
+        <span #saveProgress hidden>Saving...</span>
+        <!-- Save button -->
+        <button type="button" class="btn btn-success" (click)="processSave()">Save</button>
+    </div>
+</div>

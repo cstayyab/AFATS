@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-ql-actions',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QlActionsComponent implements OnInit {
 
-  constructor() { }
+  modalRef: BsModalRef = null
+
+  constructor(
+    private modalService: BsModalService
+  ) { }
 
   ngOnInit() {
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
 }

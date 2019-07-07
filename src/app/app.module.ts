@@ -6,6 +6,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +17,7 @@ import { QuickLinksComponent } from './components/quick-links/quick-links.compon
 import { QuickLinkRowComponent } from './components/quick-link-row/quick-link-row.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { QlActionsComponent } from './components/ql-actions/ql-actions.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { QlActionsComponent } from './components/ql-actions/ql-actions.component
     QuickLinksComponent,
     QuickLinkRowComponent,
     SearchbarComponent,
-    QlActionsComponent
+    QlActionsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

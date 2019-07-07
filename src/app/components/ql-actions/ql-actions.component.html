@@ -4,7 +4,12 @@
         <fa-icon [icon]="['fas', 'plus-circle']" size="2x"></fa-icon>
     </a>
     <!-- Settings -->
-    <a class="text-muted px-2" href="#">
+    <a class="text-muted px-2" href="#" (click)="openModal(settingsModal)">
         <fa-icon [icon]="['fas', 'cog']" size="2x"></fa-icon>
     </a>
 </div>
+
+<!-- Settings Modal -->
+<ng-template #settingsModal>
+    <app-settings [modalRef]="modalRef"></app-settings>
+</ng-template>
