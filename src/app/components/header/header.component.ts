@@ -17,7 +17,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // Fetch user defined Search bar config
-    this.searchProvider = this.searchService.fetchSearchProvider()
+    this.searchService.fetchSearchProvider()
+    .subscribe({
+      next: n => {
+        console.log(n)
+        console.log('fetch service provider')
+      },
+      error: err => {
+        console.error(err)
+      }
+    })
     // Subscribe to searchChanged$ to update search provider
     this.searchService.searchChanged$.subscribe(x => this.searchProvider=x)
   }

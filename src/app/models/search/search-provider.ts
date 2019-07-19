@@ -1,12 +1,12 @@
 export default class SearchProvider {
 
-    key: string
+    slug: string
 
     faClass: string
 
     displayName: string
 
-    searchURL: string
+    url: string
 
-    queryParam:string
+    qParam:string
 }

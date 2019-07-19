@@ -19,6 +19,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { QlActionsComponent } from './components/ql-actions/ql-actions.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AddQuickLinkComponent } from './components/add-quick-link/add-quick-link.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddQuickLinkComponent } from './components/add-quick-link/add-quick-lin
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    HttpClientModule,
     ModalModule.forRoot()
   ],
   providers: [],

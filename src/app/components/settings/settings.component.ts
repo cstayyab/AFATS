@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { SearchOptions } from 'src/app/models/search/search-options';
 import { SearchbarService } from 'src/app/services/searchbar.service';
 import SearchProvider from 'src/app/models/search/search-provider';
-import { BehaviorSubject } from 'rxjs';
+import { UserIdentityService } from 'src/app/services/user-identity.service';
 
 @Component({
   selector: 'app-settings',
@@ -13,7 +12,8 @@ import { BehaviorSubject } from 'rxjs';
 export class SettingsComponent implements OnInit {
 
   constructor(
-    private searchService: SearchbarService
+    private searchService: SearchbarService,
+    private userId: UserIdentityService
   ) { }
 
   /**
@@ -49,33 +49,24 @@ export class SettingsComponent implements OnInit {
   /**
    * Search providers list
    */
-  searchProvidersList = new Array<SearchOptions>()
+  searchProvidersList = new Array<SearchProvider>()
 
-  defaultSearchProvider: SearchProvider = null
+  searchProviderKey: string = null
 
   ngOnInit() {
     // Populate Search options
-    const providers = this.searchService.getAllSearchProviders()
-    // clear data set
-    this.searchProvidersList.splice(0, this.searchProvidersList.length)
-    // add new stuff!
-    providers.forEach(el => this.searchProvidersList.push(el))
-  }
-
-  updateSearchProvider(configKey: string) {
-    console.log('update provider: ' + configKey)
-    // Setup config
-    switch (configKey) {
-      case SearchOptions.OPT_GOOGLE.key:
-        this.defaultSearchProvider = SearchOptions.OPT_GOOGLE
-        break;
-      case SearchOptions.OPT_TWITTER.key:
-        this.defaultSearchProvider = SearchOptions.OPT_TWITTER
-        break;
-      case SearchOptions.OPT_DDG.key:
-        this.defaultSearchProvider = SearchOptions.OPT_DDG
-        break;
-    }
+    this.searchService.getAllSearchProviders()
+      .subscribe({
+        next: e => {
+          // Remove old data
+          this.searchProvidersList.splice(0, this.searchProvidersList.length)
+          // Add new data
+          e.forEach(el => this.searchProvidersList.push(el))
+        },
+        error: err => {
+          console.error(err)
+        }
+      })
   }
 
   processSave() {
@@ -85,14 +76,18 @@ export class SettingsComponent implements OnInit {
       // Show 'Saving...' message
       el.hidden = false
       // Save the settings
-      this.searchService.saveSearchProvider(this.defaultSearchProvider)
-      // Hide 'Saving...' message
-      setTimeout(() => {
-        // wait 2 secs for UX
-        el.hidden = true
-      // Update UI
-      this.searchService.searchChanged$.next(this.defaultSearchProvider)
-      }, 2000)
+      this.searchService.saveSearchProvider(this.searchProviderKey)
+        .subscribe({
+          next: (resp: any) => {
+            console.log(resp)
+            // Update user hash
+            this.userId.saveUserHash(resp.hash)
+            // hide msg
+            el.hidden = true
+            // Update UI
+            this.searchService.searchChanged$.next(null)
+          }
+        })
     } else {
       alert('Invalid UI state. Unable to save data.')
     }

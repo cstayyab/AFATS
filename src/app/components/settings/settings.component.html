@@ -30,8 +30,8 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Search Engine</span>
         </div>
-        <select type="text" class="form-control" (change)="updateSearchProvider($event.target.value)">
-            <option *ngFor="let item of searchProvidersList" [value]="item.key">{{item.displayName}}</option>
+        <select type="text" class="form-control" (change)="searchProviderKey=$event.target.value">
+            <option *ngFor="let item of searchProvidersList" [value]="item.slug">{{item.displayName}}</option>
         </select>
     </div>
     <!-- Modal footer -->
