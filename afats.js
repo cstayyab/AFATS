@@ -48,7 +48,11 @@ function updateFromLocalStorage(data) {
     data.defaultEngine = afats.defaultEngine || data.defaultEngine;
     data.searchEngines = afats.searchEngines || data.searchEngines;
     data.tiles = afats.tiles || data.tiles;
+<<<<<<< HEAD
     data.replaceDescriptionWithQuotes = (afats.replaceDescriptionWithQuotes === undefined || afats.replaceDescriptionWithQuotes === null) ? data.replaceDescriptionWithQuotes : afats.replaceDescriptionWithQuotes;
+=======
+    data.replaceDescriptionWithQuotes = (afats.replaceDescriptionWithQuotes === undefiend || afats.replaceDescriptionWithQuotes === null) ? data.replaceDescriptionWithQuotes : afats.replaceDescriptionWithQuotes;
+>>>>>>> e218add5e402ccaef6b4d4259a2384a64b1ca25a
     return data;
 }
 
