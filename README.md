@@ -42,7 +42,13 @@ These are the options that can be changed according to your willingness.
 
 &nbsp;&nbsp;&nbsp;&nbsp;`description`: Short description of the link
 
+`replaceDescriptionWithQuotes`: When set `true` Description with replaced with a new random quote on every page reload
+
 ## Changelog
+
+### February 08, 2020
+
+* Added enhancement from Issue [#4](https://github.com/cstayyab/AFATS/issues/4)
 
 ### July 3, 2019
 
