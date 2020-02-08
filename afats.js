@@ -27,7 +27,7 @@ $(
             // If enabled, replace description with random quote ( Should be last part in this function)
             if(data.replaceDescriptionWithQuotes === true) {
                 $.getJSON("https://api.quotable.io/random").done(function(quote){
-                    data.description = `&quot;${quote.content}&quot; ~${quote.author}`
+                    description = `&quot;${quote.content}&quot; ~${quote.author}`
                     setUpPage(title, description, search, tiles);
                 })
             } else {
