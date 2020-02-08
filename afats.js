@@ -90,6 +90,7 @@ function setUpPage(title, description, search, tiles) {
         });
         $("#chgDEngine option[value=" + afats.defaultEngine + "]").prop("selected", true);
         $("#chgDEngine option[value=" + afats.defaultEngine + "]").attr("selected", "selected"); //for compatibility
+        $('#chgReplaceQuotes').prop('checked', afats.replaceDescriptionWithQuotes);
     });
     $("#quickLinkModal").on('shown.bs.modal', function () {
         $("#chgQLURL").focus();
@@ -138,6 +139,7 @@ function setUpPage(title, description, search, tiles) {
         if (search !== undefined) {
             afats.defaultEngine = $('#chgDEngine').val();
         }
+        afats.replaceDescriptionWithQuotes = $('#chgReplaceQuotes').prop('checked');
         localStorage.setItem('afats', JSON.stringify(afats));
         setUpPage(afats.title, afats.description, search, afats.tiles);
         $('#settingsModal').modal('toggle');
